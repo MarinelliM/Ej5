@@ -54,5 +54,3 @@ def opcion4(lista):
             print('Los datos del vehiculo actualizado son: valor de la cuota: {}, {}, {}'.format(lista[i].getvalorcuota(),lista[i].verPlanes(),lista[i].mostrar2())) 
             i = len(lista)
         else: i+=1
-        codigo = int(input('No se encontro el vehiculo, porfavor ingrese de nuevo el codigo del plan:'))
-        i=0
