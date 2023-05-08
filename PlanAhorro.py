@@ -5,7 +5,6 @@ class PlanAhorro:
     __valor_vehiculo: int
     __cant_cuotas_plan = 0
     __cant_cuotas_licitar = 0
-    __valor_cuota:int
     
     def __init__(self, codigo_plan, modelo, version_vehiculo, valor_vehiculo) -> None:
         self.__codigo_plan = codigo_plan
@@ -13,11 +12,11 @@ class PlanAhorro:
         self.__version_vehiculo = version_vehiculo
         self.__valor_vehiculo = valor_vehiculo
 
-    def importe_cuota(self):
-        self.__valor_cuota = (self.__valor_vehiculo / self.__cant_cuotas_plan) + self.__valor_vehiculo * 0.10
-
     def getvalorcuota(self):
-        return self.__valor_cuota
+        return float((self.getvalorv() / self.getcuotasplan()) + self.getvalorv() * 0.10)
+    
+    def getvalorv(self):
+        return self.__valor_vehiculo
     
     def getcodigoplan(self):
         return self.__codigo_plan
@@ -58,4 +57,4 @@ class PlanAhorro:
         print('Cantidad de cuotas que debe tener pagas para licitar el vehiculo: ' + str(cls.getcuotaslicitar()))
     
     def monto_para_licitar(self):
-        return self.__cant_cuotas_licitar*self.importe_cuota()
+        return self.getcuotaslicitar()*self.getvalorcuota()
