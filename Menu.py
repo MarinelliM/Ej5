@@ -41,7 +41,7 @@ def opcion2(lista):
 
 def opcion3(lista):
     for i in range(len(lista)):
-        print('Para licitar el vehiculo {}, se debe haber pagado un monto de {} pesos'.format(lista[i].mostrar2(),lista[i].monto_para_licitar()))
+        print('Para licitar el vehiculo {}, se debe haber pagado un monto de {:.2f} pesos'.format(lista[i].mostrar2(),lista[i].monto_para_licitar()))
 
 def opcion4(lista):
     codigo = int(input('Ingrese el codigo del plan a buscar:'))
