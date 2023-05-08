@@ -9,9 +9,9 @@ if __name__ == '__main__':
     reader = csv.reader(archivo, delimiter=';')
     next(reader)
     for fila in reader:
-        plan = PlanAhorro(fila[0],fila[1],fila[2],fila[3])
-        plan.setcantidadcuotasplan(fila[4])
-        plan.setcantidadcuotaslicitar(fila[5])
+        plan = PlanAhorro(int(fila[0]),fila[1],fila[2],int(fila[3]))
+        plan.setcantidadcuotasplan(int(fila[4]))
+        plan.setcantidadcuotaslicitar(int(fila[5]))
         lista.append(plan)
     # for i in range(len(lista)):
     #     lista[i].mostrar()
